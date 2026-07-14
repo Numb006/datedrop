@@ -1,51 +1,50 @@
 # Datedrop
 
-Kleines Windows-Tool zum nachträglichen Setzen von Aufnahmedatum (EXIF) und
-Dateisystem-Zeitstempel bei Fotos/Videos per Drag & Drop.
+Small Windows tool to retroactively set the capture date (EXIF) and file
+system timestamp of photos/videos via drag & drop.
 
-Rewrite des ursprünglichen Python/CustomTkinter-Tools als natives
-Tauri + React Desktop-App.
+Rewrite of the original Python/CustomTkinter tool as a native
+Tauri + React desktop app.
 
-## Funktionen
+## Features
 
-- Drag & Drop von Fotos/Videos (oder Auswahl per Dateidialog)
-- Tabelle mit Dateiname, aktuellem Datum und Reihenfolge (per Drag sortierbar)
-- Neues Datum + Uhrzeit für alle ausgewählten Dateien setzen
-- Profi-Modus: Datum pro Datei um X Sekunden erhöhen (für Serienaufnahmen)
-- EXIF-Datum und Dateisystem-Zeitstempel werden gemeinsam aktualisiert
-- Doppelklick öffnet die Datei im Standardprogramm
+- Drag & drop photos/videos (or pick them via a file dialog)
+- Table with filename, current date, and order (sortable by drag)
+- Set a new date + time for all selected files
+- Pro mode: increment the date per file by X seconds (for burst shots)
+- EXIF date and file system timestamp are updated together
+- Double-click opens the file in the default program
 
 ## Download
 
-Fertige Windows-Builds gibt es unter
+Prebuilt Windows binaries are available under
 [Releases](https://github.com/Numb006/datedrop/releases).
 
-> **Hinweis:** Die App ist aktuell unsigniert. Windows SmartScreen zeigt beim
-> ersten Start eine Warnung ("Nicht erkannte App"). Über
-> **Weitere Informationen → Trotzdem ausführen** startet die App normal.
-> Das ist einmalig.
+> **Note:** The app is currently unsigned. Windows SmartScreen will show a
+> warning ("Unrecognized app") on first launch. Click
+> **More info → Run anyway** to start it normally. This only happens once.
 
-## Aus dem Quellcode bauen
+## Building from source
 
-Voraussetzungen: [Node.js](https://nodejs.org/) (LTS) und
+Requirements: [Node.js](https://nodejs.org/) (LTS) and
 [Rust](https://www.rust-lang.org/tools/install).
 
 ```bash
 npm install
-npm run tauri dev    # Entwicklungsmodus
-npm run tauri build  # Produktions-Build (.exe/.msi unter src-tauri/target/release/bundle)
+npm run tauri dev    # development mode
+npm run tauri build  # production build (.exe/.msi under src-tauri/target/release/bundle)
 ```
 
-## Tech-Stack
+## Tech stack
 
 - Frontend: React + TypeScript + Vite, shadcn/ui + Tailwind CSS
 - Backend: Tauri v2 (Rust)
-- EXIF-Handling: `kamadak-exif`
+- EXIF handling: `kamadak-exif`
 
-## Plattform
+## Platform
 
-Aktuell nur Windows. macOS/Linux sind nicht getestet und derzeit nicht geplant.
+Windows only for now. macOS/Linux are untested and not currently planned.
 
-## Lizenz
+## License
 
 [MIT](LICENSE)
